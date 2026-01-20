@@ -1,0 +1,161 @@
+.footer {
+  background: #f2f2fc;
+  padding: 50px 8%;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.footer-top-icons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom:  2px solid #304c97;
+  padding-bottom: 18px;
+  margin-bottom: 40px;
+}
+
+.icon-box {
+  text-align: center;
+  width: 150px;
+}
+
+.icon-box i {
+  font-size: 26px;
+  color: #d04a2b;
+}
+
+.icon-box p {
+  font-size: 13px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+  gap: 35px;
+}
+
+/* Headings */
+.footer-col h3 {
+  width: 150px;
+  position: relative;
+  cursor: pointer; 
+}
+
+.footer-col h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;           
+  background-color: currentColor; 
+  transition: width 0.9s ease;
+}
+
+.footer-col h3:hover::after {
+  width: 100%;           
+}
+
+/* Text and links */
+.footer-col p {
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  margin: 6px 0;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: #d04a2b;
+}
+
+/* Social Section */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.social-img,
+.social-img1 {
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.social-img:hover,
+.social-img1:hover {
+  transform: scale(1.12);
+}
+
+/* Divider */
+.footer-divider {
+  margin: 25px 0;
+  border: none;
+  border-top: 2px solid #304c97;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding-top: 14px;
+    padding-bottom: 14px;
+  background: #0e1e63;
+  color: #fff;
+  font-size: 14px;
+}
+.logo-img{
+    /* margin-left: 50px; */
+    width: 100px;
+    height: 100px;
+}
+.payment-icons img {
+    height: 35px;
+  width: 60px;
+  margin-right: 22px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .footer-top-icons {
+    justify-content: center;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 550px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .payment-icons {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 12px;
+  }
+}

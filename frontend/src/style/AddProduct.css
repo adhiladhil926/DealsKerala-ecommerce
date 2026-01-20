@@ -1,0 +1,304 @@
+.add-product-page {
+    margin-top:50px ;
+  padding: 40px;
+  /* background: linear-gradient(135deg, #f7f9fc, #eef2f7); */
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.add-product-page h2 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 40px 0 20px;
+  color: #1f2937;
+}
+.add-product-page h2::after{
+      content: "";
+  width: 280px;
+  height: 4px;
+  background: linear-gradient(90deg, #1827ff, #665fcf);
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
+
+/*  FORM  */
+.add-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  /* box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08); */
+  margin-bottom: 50px;
+}
+
+.add-form input,
+.add-form select,
+.add-form textarea {
+  width: 90%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  outline: none;
+    position: relative;
+  z-index: 9999;
+  pointer-events: auto;
+  transition: 0.3s;
+}
+
+.add-form input:focus,
+.add-form select:focus,
+.add-form textarea:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.add-form textarea {
+  resize: none;
+  min-height: 90px;
+}
+
+/* BUTTON */
+.btn {
+ --color: #00A97F;
+ --color2: rgb(10, 25, 30);
+ padding: 0.8em 1.75em;
+ background-color: transparent;
+ border-radius: 6px;
+ border: .3px solid var(--color);
+ transition: .5s;
+ position: relative;
+ overflow: hidden;
+ cursor: pointer;
+ z-index: 1;
+ width: 50%;
+ margin-top: 20px;
+ font-weight: 300;
+ font-size: 17px;
+ font-family: 'Roboto', 'Segoe UI', sans-serif;
+ text-transform: uppercase;
+ color: var(--color);
+}
+.btn::after, .btn::before {
+ content: '';
+ display: block;
+ height: 100%;
+ width: 100%;
+ transform: skew(90deg) translate(-50%, -50%);
+ position: absolute;
+ inset: 50%;
+ left: 25%;
+  pointer-events: none;
+ z-index: -1;
+ transition: 1.4s ease-out;
+ background-color: var(--color);
+}
+
+.btn::before {
+ top: -50%;
+ left: -25%;
+ transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::before {
+ transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+ transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:hover {
+ color: var(--color2);
+}
+
+.btn:active {
+ filter: brightness(.7);
+ transform: scale(.98);
+}
+
+.image-preview {
+  display: grid;
+  width: 45%;
+  height: 150px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+  padding: 14px;
+  background: linear-gradient(145deg, #f9fafb, #eef2f7);
+  border-radius: 18px;
+  border: 1px dashed #cbd5e1;
+}
+.image-preview img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+  background: white;
+}
+
+/* HOVER EFFECT */
+.image-preview img:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* ACTIVE CLICK  */
+.image-preview img:active {
+  transform: scale(0.98);
+}
+
+
+/*  ADD VARIANT BUTTON  */
+.btn-variant {
+  margin-top: 14px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #1d976c, #93f9b9);
+  color: #083d2c;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 12px 30px rgba(29, 151, 108, 0.25);
+  transition: all 0.35s ease;
+}
+
+.btn-variant:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 45px rgba(29, 151, 108, 0.35);
+}
+
+.btn-variant:active {
+  transform: scale(0.98);
+}
+
+/* IMAGE UPLOAD*/
+.upload-box {
+  margin-top: 18px;
+  width: 500px;
+  height: 50px;
+  padding: 28px;
+  border-radius: 18px;
+  border: 2px dashed rgba(0, 0, 0, 0.12);
+  background: linear-gradient(145deg, #ffffff, #f3f6f4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: #2f4f4f;
+  transition: all 0.35s ease;
+  text-align: center;
+}
+
+.upload-box span {
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+.upload-box:hover {
+  border-color: #1d976c;
+  background: linear-gradient(145deg, #f4fff9, #ecfff6);
+  box-shadow: 0 15px 40px rgba(29, 151, 108, 0.18);
+  transform: translateY(-3px);
+}
+
+/* Hide native input */
+.upload-box input {
+  display: none;
+}
+
+/* PRODUCTS */
+.products-section h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 75px;
+}
+
+/*CARD*/
+.product-card {
+  margin-top: 35px;
+  background: #fff;
+  padding: 20px;
+  width: auto;
+  text-align: left;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+.product-card img {
+   width: 300px;
+     margin-bottom: 14px;
+  height: 240px;
+  margin-left: 0px;
+  object-fit: cover;
+}
+.action-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+/* EDIT BUTTON */
+.btn-edit {
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(76, 175, 80, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-edit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(76, 175, 80, 0.5);
+}
+
+.btn-edit:active {
+  transform: scale(0.97);
+}
+
+/* DELETE BUTTON */
+.btn-delete {
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #e53935, #b71c1c);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(229, 57, 53, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-delete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(229, 57, 53, 0.55);
+}
+
+.btn-delete:active {
+  transform: scale(0.97);
+}
+
+

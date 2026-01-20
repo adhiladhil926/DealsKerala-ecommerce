@@ -1,0 +1,91 @@
+
+
+/* Container */
+.products-container {
+
+  max-width: 1400px;
+  margin: 100px auto;
+  padding: 0 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+  align-items: stretch;    
+  grid-auto-rows: 1fr;    
+}
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* DESCRIPTION */
+.product-description {
+  font-size: 13px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+  color: #6b6b6b;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.product-price {
+  display: flex;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* PRICE WRAPPER */
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0 18px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ORIGINAL PRICE (STRIKED) */
+.original-price {
+  font-size: 16px;
+  font-weight: 500;
+  color: #9ca3af; /* gray-400 */
+  text-decoration: line-through;
+}
+
+/* OFFER / CURRENT PRICE (HIGHLIGHTED) */
+.offer-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #15803d; 
+  background: linear-gradient(90deg, #dcfce7, #bbf7d0);
+  padding: 4px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.25);
+}
+
+/* OPTIONAL: discount badge look */
+.offer-price::before {
+  /* content: "₹"; */
+  margin-right: 2px;
+}
+.product-title1{
+  font-size: 30px;
+  font-weight: 600;
+  margin: 12px 0 8px;
+  text-align: center;
+}
