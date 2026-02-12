@@ -1,10 +1,14 @@
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { CartContext } from "../features/CartContext";
 import "../style/CheckoutForm.css";
 
 
 
-const CheckoutForm = ({ cart, subtotal, shipping, grandTotal }) => {
+const CheckoutForm = ({  cart,
+  subtotal,
+  shipping,
+  grandTotal,
+  selectedState }) => {
   const { clearCart } = useContext(CartContext);
 
   const [formData, setFormData] = useState({
@@ -23,20 +27,22 @@ const CheckoutForm = ({ cart, subtotal, shipping, grandTotal }) => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    //  EMPTY CART CHECK
-    if (!cart || cart.length === 0) {
-      alert("🛒 Your cart is empty. Please add items before checkout.");
-      return;
-    }
+  if (!cart || cart.length === 0) {
+    alert("🛒 Your cart is empty. Please add items before checkout.");
+    return;
+  }
 
+  setLoading(true);
+
+  try {
     const customer = {
       name: formData.name,
       address: formData.address,
       email: formData.email,
       phone: formData.phone,
-      state: formData.state,
+      state: selectedState,
       pincode: formData.pincode,
       gst: formData.gst
     };
@@ -65,11 +71,18 @@ const CheckoutForm = ({ cart, subtotal, shipping, grandTotal }) => {
 
     if (res.ok) {
       alert("✅ Order placed successfully!");
-      clearCart(); 
+      clearCart();
     } else {
       alert("❌ Order failed");
     }
-  };
+  } catch (error) {
+    alert("❌ Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
+const [loading, setLoading] = useState(false);
 
   return (
     <form className="checkout-form" onSubmit={handleSubmit}>
@@ -116,9 +129,11 @@ const CheckoutForm = ({ cart, subtotal, shipping, grandTotal }) => {
   </div>
 </div>
 
-<button className="button11" type="submit">
-  Confirm Order ₹{grandTotal?.toFixed(2) || '0.00'}
+<button className="button11" type="submit" disabled={loading}>
+  {loading ? "Placing Order..." : `Confirm Order ₹${grandTotal?.toFixed(2) || "0.00"}`}
+  {loading && <span className="spinner" />}
 </button>
+
 
     </form>
   );

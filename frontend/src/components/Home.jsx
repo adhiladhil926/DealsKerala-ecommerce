@@ -33,7 +33,7 @@ export default function Home() {
                 style={{ backgroundImage: `url(${images[currentIndex]})` }}>
 
                 <div className="hero-content fade-slide">
-                    <button className="button" type="button">
+                    <button onClick={() => window.location.href = "/product"} className="button" type="button">
                         <div className="wrap">
                             <p>
                                 <span>✧</span>

@@ -12,26 +12,32 @@ const Products = () => {
   const queryParams = new URLSearchParams(location.search);
   const categoryFilter = queryParams.get("category");
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
+useEffect(() => {
+  window.scrollTo(0, 0);
 
-    const fetchProducts = async () => {
-      try {
-        let url = `${import.meta.env.VITE_API_URL}/api/products`;
-        if (categoryFilter) url += `?category=${categoryFilter}`;
+  const fetchProducts = async () => {
+    try {
+      let url = `${import.meta.env.VITE_API_URL}/api/products`;
+      if (categoryFilter) url += `?category=${categoryFilter}`;
 
-        const res = await fetch(url);
-        const data = await res.json();
+      const res = await fetch(url);
+      const data = await res.json();
+
+      // ⏳ FORCE LOADING FOR 2 SECONDS
+      setTimeout(() => {
         setProducts(Array.isArray(data) ? data : []);
-      } catch (err) {
-        console.error(err);
-      } finally {
         setLoading(false);
-      }
-    };
+      }, 2000);
 
-    fetchProducts();
-  }, [categoryFilter]);
+    } catch (err) {
+      console.error(err);
+      setTimeout(() => setLoading(false), 2000);
+    }
+  };
+
+  fetchProducts();
+}, [categoryFilter]);
+
 
   // ✅ SAFE FORMATTER
   const formatPrice = (value) => {
@@ -40,10 +46,25 @@ const Products = () => {
   };
 
   return (
+    <>
     <div className="products-container">
       <div className="products-grid">
         {loading ? (
-          <p>Loading...</p>
+<div class="pl">
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__dot"></div>
+	<div class="pl__text">Loading…</div>
+</div>
         ) : products.length === 0 ? (
           <p>No products found.</p>
         ) : (
@@ -100,6 +121,7 @@ const offer = firstVariant?.offerPrice;
         )}
       </div>
     </div>
+    </>
   );
 };
 

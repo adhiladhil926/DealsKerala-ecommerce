@@ -1,0 +1,87 @@
+/* Page */
+.return-page {
+  background: #f8fafc;
+}
+
+/* Banner */
+.return-banner {
+  background: linear-gradient(135deg, #46484e, #23252b);
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.return-heading {
+  color: #ffffff;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+/* Content */
+.return-content {
+  max-width: 1800px;
+  margin: -60px auto 80px;
+  background: #ffffff;
+  padding: 50px 60px;
+  border-radius: 14px;
+}
+
+/* Titles */
+.return-title {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 22px;
+  border-left: 5px solid #25398b;
+  padding-left: 15px;
+}
+
+.return-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.return-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #000000;
+    margin-bottom: 15px;
+}
+
+/* Lists */
+.return-list {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.return-list-item {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+/* Highlight */
+.return-highlight {
+ background: #f1f5f9;
+  padding: 15px 20px;
+   border-left: 5px solid #000000;
+  border-radius: 6px;
+  max-width: 700px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .return-content {
+    padding: 30px 25px;
+    margin-top: -40px;
+  }
+
+  .return-heading {
+    font-size: 2.2rem;
+  }
+}

@@ -1,5 +1,6 @@
 import { useLocation, Navigate } from "react-router-dom";
 import CheckoutForm from "../features/CheckoutForm";
+
 const Checkout = () => {
   const { state } = useLocation();
 
@@ -7,11 +8,13 @@ const Checkout = () => {
 
   return (
     <CheckoutForm
-      cart={state.cart}
-      subtotal={state.subtotal}
-      shipping={state.shipping}
-      grandTotal={state.grandTotal}
-    />
+  cart={state.cart}
+  subtotal={state.subtotal}
+  shipping={state.shipping}
+  grandTotal={state.grandTotal}
+  selectedState={state.selectedState}
+/>
+
   );
 };
 

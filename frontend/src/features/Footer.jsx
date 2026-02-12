@@ -17,7 +17,7 @@ const Footer = () => {
             <div className="footer-top-icons">
                 <div className="icon-box"><i>💎</i><p>Best Quality Material</p></div>
                 <div className="icon-box"><i>💳</i><p>Safe Payment Method</p></div>
-                <div className="icon-box"><i>🚚</i><p>Free Delivery</p></div>
+                {/* <div className="icon-box"><i>🚚</i><p>Free Delivery</p></div> */}
                 <div className="icon-box"><i>📦</i><p>Reliable Delivery</p></div>
                 <div className="icon-box"><i>🎧</i><p>24/7 Customer Support</p></div>
             </div>
