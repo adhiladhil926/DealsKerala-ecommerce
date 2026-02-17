@@ -83,8 +83,18 @@ const Footer = () => {
                             Adimali, Munnar, Idukki – 685561<br />
                             Kerala, India
                         </p>
+<div className="footer-certifications">
+  <p className="fs">
+    <strong>FSSAI:</strong>
+       <span>21324174000731</span>
+  </p>
 
-                        <strong className="fs">FSSAI: 93**********</strong>
+  <p className="fs">
+    <strong>MSME:</strong>
+    <span>UDYAM-KL-03-00116191</span>
+  </p>
+</div>
+
                     </div>
 
                 </div>

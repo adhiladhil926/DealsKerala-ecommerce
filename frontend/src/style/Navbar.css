@@ -1,4 +1,4 @@
-/* ================= BASE ================= */
+/* BASE  */
 .navbar {
   width: 100%;
   background: #fff;
@@ -53,7 +53,9 @@
 
 .cart-icon-container {
   position: relative;
+  margin-right: 12px;   /
 }
+
 
 .cart-count {
   position: absolute;
@@ -89,6 +91,7 @@
 .hamburger {
   display: none;
   cursor: pointer;
+  width: 50%;
   transition: transform 0.3s ease;
 }
 
@@ -140,4 +143,79 @@
     font-size: 18px;
     font-weight: 600;
   }
+}
+/* NAVBAR IMAGE WRAPPERS */
+
+.top-img,
+.top-img1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* RECTANGULAR LOGO */
+
+.top-img img {
+  width: 80px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.top-img img:hover {
+  transform: scale(1.05);
+}
+
+/* ROUND LOGO */
+
+.top-img1 img {
+  width: 80px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.top-img1 img:hover {
+
+  transform: scale(1.05);
+
+}
+.top-img2 img{
+  width: 95px;
+  max-width: 100%;
+  height: auto;
+  object-fit:cover;
+    transition: transform 0.3s ease;
+
+}
+.top-img2 img:hover {
+  transform: scale(1.05);
+
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .top-img img,
+  .top-img1 img {
+    width: 40px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .top-img img,
+  .top-img1 img {
+    width: 70px;
+  }
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
 }
