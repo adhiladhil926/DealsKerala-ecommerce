@@ -43,9 +43,6 @@ app.use(
   })
 );
 
-// ✅ FIXED LINE
-app.options("/*", cors());
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.post("/upload", upload.single("image"), (req, res) => {
