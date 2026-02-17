@@ -11,13 +11,10 @@ img {
   display: block;
 }
 
-/* ===================== */
-/* HERO SECTION */
-/* ===================== */
 .hero {
   width: 100%;
   min-height: 100vh;
-  margin-top: 80px;
+  /* margin-top: 80px; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -249,11 +246,120 @@ img {
     gap: 20px;
   }
 }
+/* ============================= */
+/* MOBILE HOMEPAGE LIKE STYLE */
+/* ============================= */
 
-/* ===================== */
-/* SMALL MOBILE */
-/* ===================== */
+@media (max-width: 768px) {
+
+  /* HERO */
+  .hero {
+    height: 85vh;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    position: static;
+    padding: 0 20px;
+  }
+
+  /* BUTTON */
+  .shop-btn {
+    margin-top: 40px;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 100px;
+    letter-spacing: 0.8px;
+  }
+
+  /* ROUND CATEGORY */
+  .round-category-wrapper {
+    gap: 18px;
+    padding: 30px 10px;
+  }
+
+  .round-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .round-category p {
+    font-size: 14px;
+  }
+
+  /* MARQUEE */
+  .marquee {
+    height: 65px;
+  }
+
+  .marquee-inner span {
+    font-size: 1.2rem;
+    margin-right: 50px;
+  }
+
+  /* TITLES */
+  .category,
+  .title1 {
+    font-size: 26px;
+  }
+
+  /* FEATURES */
+  .features1 {
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .feature1 {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .feature1 img {
+    width: 75px;
+    height: auto;
+  }
+}
+
+/* ============================= */
+/* SMALL MOBILE (LIKE PREMIUM HOMEPAGE) */
+/* ============================= */
+
 @media (max-width: 480px) {
+
+  .hero {
+    height: 80vh;
+  }
+
+  .shop-btn {
+    font-size: 15px;
+    padding: 12px 24px;
+  }
+
+  .round-img {
+    width: 105px;
+    height: 105px;
+  }
+
+  .round-category p {
+    font-size: 13px;
+  }
+
+  .category,
+  .title1 {
+    font-size: 24px;
+  }
+
+  .feature1 img {
+    width: 65px;
+  }
+}
+
+
+/* @media (max-width: 480px) {
   .hero {
     min-height: 80vh;
   }
@@ -276,7 +382,7 @@ img {
     max-width: 80px;
   }
 }
-
+ */
 
 
 

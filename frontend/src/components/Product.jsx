@@ -27,7 +27,7 @@ useEffect(() => {
       setTimeout(() => {
         setProducts(Array.isArray(data) ? data : []);
         setLoading(false);
-      }, 2000);
+      }, 500);
 
     } catch (err) {
       console.error(err);

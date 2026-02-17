@@ -36,7 +36,7 @@ function ReturnPolicy() {
         </ul>
 
         <p className="return-text return-highlight">
-          📧 Report issues at: <strong>support@dealskerala.com</strong>
+          📧 Report issues at: <strong>storedealskerala@gmail.com</strong>
         </p>
 
         <h3 className="return-subtitle">2. Non-Returnable Situations</h3>

@@ -107,7 +107,7 @@ const Contact = () => {
 
   <div className="info-item">
     <MdPhone className="icon" />
-    <a href="tel:+917510155444">+91 00000000</a>
+    <a href="tel:+917510155444">+91 8129230500</a>
   </div>
 
   <div className="info-item">

@@ -112,10 +112,10 @@ function Privacy() {
         <h3 className="return-subtitle">Contact Us</h3>
         <ul className="return-list">
           <li className="return-list-item">
-            📧 Email: <strong>support@dealskerala.com</strong>
+            📧 Email: <strong>storedealskerala@gmail.com</strong>
           </li>
           <li className="return-list-item">
-           📞 Customer Support: <strong>+91 00000000</strong>
+           📞 Customer Support: <strong>+91 8129230500</strong>
           </li>
           <li className="return-list-item">
           🌐 Website:: <strong>https://www.dealskerala.com</strong>

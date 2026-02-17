@@ -106,7 +106,7 @@ function Privacy() {
 
         <p className="privacy-text privacy-highlight">
           If you have any questions about this Privacy Policy, contact us at:
-          support@dealskerala.com
+         storedealskerala@gmail.com
         </p>
 
       </div>

@@ -19,33 +19,37 @@ const ProductDetails = () => {
   });
 
   const { cart, addToCart, updateQuantity } = useContext(CartContext);
+useEffect(() => {
+  window.scrollTo(0, 0);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  const fetchProduct = async () => {
+    try {
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/products/${id}`
+      );
+      const data = await res.json();
+      setProduct(data);
 
-    const fetchProduct = async () => {
-      try {
-        const res = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/products/${id}`
-        );
-        const data = await res.json();
-        setProduct(data);
-        if (data.variants?.length > 0) {
-          const defaultVariant =
-            data.variants.find(v => v.weight === "250g") ||
-            data.variants[0];
+      if (data.variants?.length > 0) {
+        const defaultVariant =
+          data.variants.find(v => v.weight === "250g") ||
+          data.variants[0];
 
-          setSelectedVariant(defaultVariant);
-        }
-      } catch (err) {
-        console.log(err);
-      } finally {
-        setLoading(false);
+        setSelectedVariant(defaultVariant);
       }
-    };
+    } catch (err) {
+      console.log(err);
+    } finally {
+      // ✅ FORCE 2 SECONDS LOADING
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    }
+  };
 
-    fetchProduct();
-  }, [id]);
+  fetchProduct();
+}, [id]);
+
 
   const handleZoom = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -91,9 +95,13 @@ const ProductDetails = () => {
 
   if (loading) {
     return (
-      <div className="loading">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
+    <div  className="loading">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
     );
   }
 
