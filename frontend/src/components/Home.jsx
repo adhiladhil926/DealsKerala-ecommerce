@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../style/Home.css"
 // import Navbar from "../features/Navbar.jsx";
-import b1 from "../assets/b1.png"
-import b2 from "../assets/b2.png"
-import b3 from "../assets/b3.png"
+import b1 from "../assets/b1.webp"
+import b2 from "../assets/b2.webp"
+import b3 from "../assets/b3.webp"
 import c1 from "../assets/c1.jpg"
 import c2 from "../assets/c2.jpg"
 import c3 from "../assets/c3.jpg"

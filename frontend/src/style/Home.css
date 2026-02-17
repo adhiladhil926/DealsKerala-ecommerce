@@ -1,4 +1,291 @@
+/* ===================== */
+/* GLOBAL RESET */
+/* ===================== */
+* {
+  box-sizing: border-box;
+}
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===================== */
+/* HERO SECTION */
+/* ===================== */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Fade animation */
+.fade-slide {
+  animation: fadeSlide 1.2s ease-in-out;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== */
+/* HERO CONTENT */
+/* ===================== */
+.hero-content {
+  padding: 0 120px 80px;
+}
+
+/* ===================== */
+/* BUTTON */
+/* ===================== */
+.button {
+  --bg: #080808;
+  --radius: 100px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  transition: all 0.2s ease;
+  box-shadow:
+    inset 0 0.3rem 0.9rem rgba(255, 255, 255, 0.3),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.5),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+
+.button .wrap {
+  font-size: 22px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 26px 38px;
+  border-radius: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover text switch */
+.button .wrap p span:nth-child(2) {
+  display: none;
+}
+.button:hover .wrap p span:nth-child(1) {
+  display: none;
+}
+.button:hover .wrap p span:nth-child(2) {
+  display: inline-block;
+}
+
+.button .wrap p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  transition: all 0.2s ease;
+  transform: translateY(2%);
+  mask-image: linear-gradient(to bottom, white 40%, transparent);
+}
+
+/* Button glass effect */
+.button .wrap::before,
+.button .wrap::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.button .wrap::before {
+  left: -15%;
+  right: -15%;
+  bottom: 25%;
+  top: -100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.button .wrap::after {
+  left: 6%;
+  right: 6%;
+  top: 12%;
+  bottom: 40%;
+  border-radius: 22px 22px 0 0;
+  box-shadow: inset 0 10px 8px -10px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
+}
+
+.button:hover .wrap::before {
+  transform: translateY(-5%);
+}
+
+.button:hover .wrap::after {
+  opacity: 0.4;
+  transform: translateY(5%);
+}
+
+.button:hover .wrap p {
+  transform: translateY(-4%);
+}
+
+.button:active {
+  transform: translateY(4px);
+}
+
+/* ===================== */
+/* WHY CHOOSE US */
+/* ===================== */
+.why-choose-us1 {
+  background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
+  padding: 70px 40px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.title1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.title1::after {
+  content: "";
+  width: 60%;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #1827ff, #665fcf);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.features1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 35px;
+  justify-items: center;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.feature1 {
+  background: #222;
+  border-radius: 14px;
+  padding: 25px 30px;
+  width: 160px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border: 1px solid transparent;
+}
+
+.feature1:hover {
+  transform: translateY(-10px);
+  border-color: #e0752a;
+}
+
+.feature1 img {
+  max-width: 100px;
+  transition: 0.4s ease;
+}
+
+/* ===================== */
+/* TABLET */
+/* ===================== */
+@media (max-width: 1024px) {
+  .hero-content {
+    padding: 0 60px 60px;
+  }
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 85vh;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .button .wrap {
+    font-size: 18px;
+    padding: 18px 28px;
+  }
+
+  .why-choose-us1 {
+    padding: 50px 20px;
+  }
+
+  .features1 {
+    gap: 20px;
+  }
+}
+
+/* ===================== */
+/* SMALL MOBILE */
+/* ===================== */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .button .wrap {
+    font-size: 16px;
+    padding: 14px 22px;
+  }
+
+  .title1 {
+    font-size: 26px;
+  }
+
+  .feature1 {
+    width: 140px;
+    height: 100px;
+  }
+
+  .feature1 img {
+    max-width: 80px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* 
 img {
   max-width: 100%;
   height: auto;
@@ -139,7 +426,6 @@ img {
     0 3rem 3rem rgba(0, 0, 0, 0.3),
     0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
 }
-/* Parent Section */
 .why-choose-us1 {
   background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
   padding: 70px 40px;
@@ -147,7 +433,6 @@ img {
   font-family: "Poppins", sans-serif;
 }
 
-/* Title */
 .title1 {
   font-size: 32px;
   font-weight: 700;
@@ -169,7 +454,6 @@ img {
   transform: translateX(-50%);
 }
 
-/* Logo Grid */
 .features1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -179,7 +463,6 @@ img {
   margin: auto;
 }
 
-/* Card Style */
 .feature1 {
   background: #222;
   border-radius: 14px;
@@ -194,14 +477,13 @@ img {
   border: 1px solid transparent;
 }
 
-/* Hover */
+
 .feature1:hover {
   transform: translateY(-10px);
   border-color: #e0752a;
   box-shadow: 0 14px 36px rgba(224, 117, 42, 0.12);
 }
 
-/* Logo Style */
 .feature1 img {
   max-width: 100px;
   transition: 0.4s ease;
@@ -212,7 +494,6 @@ img {
   transform: scale(1.1);
 }
 
-/* Mobile */
 @media (max-width: 600px) {
   .title1 {
     font-size: 26px;
@@ -225,4 +506,5 @@ img {
   .feature1 img {
     max-width: 80px;
   }
-}
+} */
+
