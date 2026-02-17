@@ -78,7 +78,7 @@ const Navbar = () => {
                         </div>
 
                         <CiSearch
-                            size={24}
+                            size={34}
                             className="nav-icon"
                             onClick={() => setSearchOpen(!searchOpen)}
                         />
