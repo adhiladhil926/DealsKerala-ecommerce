@@ -23,7 +23,6 @@ useEffect(() => {
       const res = await fetch(url);
       const data = await res.json();
 
-      // ⏳ FORCE LOADING FOR 2 SECONDS
       setTimeout(() => {
         setProducts(Array.isArray(data) ? data : []);
         setLoading(false);

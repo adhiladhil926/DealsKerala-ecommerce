@@ -57,10 +57,24 @@ app.post("/upload", upload.single("image"), (req, res) => {
     res.status(500).json({ error: "Upload failed" });
   }
 });
+// mongoose
+//   .connect(process.env.MONGO_URI)
+//   .then(() => console.log("MongoDB Connected"))
+//   .catch((err) => console.error("MongoDB Error:", err));
 mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.error("MongoDB Error:", err));
+  .connect(process.env.MONGO_URI, {
+    maxPoolSize: 10,               // keep connections ready
+    serverSelectionTimeoutMS: 5000, // fail fast if DB is slow
+    socketTimeoutMS: 45000,        // avoid long hanging requests
+  })
+  .then(() => {
+    console.log("MongoDB Connected");
+  })
+  .catch((err) => {
+    console.error("MongoDB Connection Error:", err.message);
+  });
+
+
 
 app.get("/", (req, res) => {
   res.send("Server is running.");
