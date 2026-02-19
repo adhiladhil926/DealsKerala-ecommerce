@@ -8,7 +8,7 @@ import you from "../assets/youtube.png";
 // import amazon from "../assets/amazon.png";
 // import visa from "../assets/visa.jpg";
 // import master from "../assets/mastercard.png";
-import razor from "../assets/payment.png";
+import payment from "../assets/payment.png";
 
 import Logo from "../assets/logo.png";
 
@@ -107,7 +107,7 @@ const Footer = () => {
                         {/* <img src={amazon} alt="Amazon Pay" />
             <img src={visa} alt="Visa" />
             <img src={master} alt="Mastercard" /> */}
-                        <img src={razor} alt="Razorpay" />
+                        <img src={payment} alt="Razorpay" />
                     </div>
                 </div>
 

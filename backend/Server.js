@@ -66,6 +66,14 @@ app.get("/", (req, res) => {
   res.send("Server is running.");
 });
 
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    uptime: process.uptime(),
+    timestamp: Date.now()
+  });
+});
+
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
